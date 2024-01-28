@@ -1,0 +1,4 @@
+{
+  "baseURL": "https://anewstead.doodlecube.co.uk",
+  "routes": ["/", "/project/axa-ui"]
+}
