@@ -62,6 +62,9 @@ const testRoute = async (context: BrowserContext, testItem: TestItem) => {
   });
   testItem.scores = scores;
 
+  console.log("Path:", testItem.relRoute);
+  console.log(scores);
+
   await page.close();
 };
 
@@ -84,6 +87,8 @@ test("lighhouse pages", async () => {
   for (const item of testItems) {
     await testRoute(context, item);
   }
+
+  console.log("\n", "-------- complete --------", "\n");
 
   await context.close();
 

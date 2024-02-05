@@ -16,16 +16,16 @@ const loadJSON = (path) => {
   return JSON.parse(file);
 };
 
-const pathData = loadJSON("./paths.json");
-// const pathData = loadJSON("./bbc.json");
+// const pathData = loadJSON("./paths.json");
+const pathData = loadJSON("./doodle.json");
 const baseURL = pathData.baseURL;
 
 // regex ^\/|\/$/g: Removes the leading and trailing "/" characters.
 // regex /\//g: Replaces all remaining "/" characters with "_".
 // if going to baseURL (homepage) most likely is empty string so save as "index"
 const newTestItem = (route: string): TestItem => {
-  let fileName = route.replace(/^\/|\/$/g, "").replace(/\//g, "_");
-  fileName === "" ? "index" : fileName;
+  let fileName = route.replace(/^\/|\/$/g, "").replace(/\//g, "__");
+  fileName = fileName === "" ? "__" : fileName;
   return {
     baseURL: baseURL,
     absRoute: `${baseURL}${route}`,
